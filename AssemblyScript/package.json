@@ -1,0 +1,21 @@
+{
+  "name": "fv-ai-wasm",
+  "version": "1.0.0",
+  "description": "Bot AI for Fish Volleyball.",
+  "author": "Ashton Meuser",
+  "license": "MIT",
+  "devDependencies": {
+    "@assemblyscript/wasi-shim": "^0.1.0",
+    "assemblyscript": "^0.27.5"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./build/release.js",
+      "types": "./build/release.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "asc assembly/index.ts --target release"
+  }
+}

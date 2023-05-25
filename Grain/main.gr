@@ -1,0 +1,23 @@
+import Result from "result"
+import Process from "sys/process"
+import Random from "sys/random"
+
+record Vector {
+  mut x: Number,
+  mut y: Number,
+}
+
+let (+) = (a, b) => {
+  { x: a.x + b.x, y: a.y + b.y }
+}
+
+let a = { x: 1, y: 2 }
+let b = { x: 3, y: 4 }
+let c = a + b
+// print(c.x)
+
+print("Here is a longer string")
+
+print("And another string")
+
+Process.exit(1)

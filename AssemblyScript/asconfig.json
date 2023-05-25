@@ -1,0 +1,10 @@
+{
+  "extends": "./node_modules/@assemblyscript/wasi-shim/asconfig.json",
+  "targets": {
+    "release": {
+      "outFile": "build/main.wasm",
+      "optimize": "speed",
+      "noAssert": true
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "go.toolsEnvVars": {
+    "GOOS": "linux",
+    "GOARCH": "arm",
+    "GOROOT": "~/Library/Caches/tinygo/goroot-d114fbf713c070dd963d8934ffb82212628b796089b71d93d91b26850e9cdb61",
+    "GOFLAGS": "-tags=tinygo.wasm,wasi,runtime_memhash_leveldb,tinygo,math_big_pure_go,gc.conservative,scheduler.asyncify,serial.none"
+  }
+}

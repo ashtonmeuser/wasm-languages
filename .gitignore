@@ -1,0 +1,7 @@
+.DS_Store
+*.o
+AssemblyScript/node_modules/
+AssemblyScript/build/
+Grain/target
+Rust/target
+Zig/zig-cache
