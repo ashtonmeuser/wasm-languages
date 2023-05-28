@@ -3,14 +3,6 @@
 version = 3
 
 [[package]]
-name = "Runner"
-version = "0.1.0"
-dependencies = [
- "wasmtime",
- "wasmtime-wasi",
-]
-
-[[package]]
 name = "addr2line"
 version = "0.19.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1001,6 +993,14 @@ name = "regex-syntax"
 version = "0.7.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "436b050e76ed2903236f032a59761c1eb99e1b0aead2c257922771dab1fc8c78"
+
+[[package]]
+name = "runner"
+version = "0.1.0"
+dependencies = [
+ "wasmtime",
+ "wasmtime-wasi",
+]
 
 [[package]]
 name = "rustc-demangle"
