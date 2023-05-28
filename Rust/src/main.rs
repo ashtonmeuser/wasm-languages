@@ -1,8 +1,7 @@
 pub fn main() {}
 
 #[no_mangle]
-pub fn hello(a: i64, b: i64) -> i64 {
+pub fn hello() {
   println!("Hello, Rust!");
-  return a + b;
 }
 

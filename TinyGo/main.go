@@ -5,7 +5,6 @@ func main() {}
 // This is a Wasm module export
 //
 //export hello
-func hello(a, b int64) int64 {
+func hello() {
 	println("Hello, TinyGo!")
-	return a + b
 }

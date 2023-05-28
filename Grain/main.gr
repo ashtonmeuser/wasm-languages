@@ -1,7 +1,1 @@
-import WasmI64 from "runtime/unsafe/wasmi64"
-
-@unsafe
-export let hello = (a: WasmI64, b: WasmI64) => {
-  print("Hello, Grain!")
-  WasmI64.add(a, b)
-}
+export let hello = () => print("Hello, Grain!")

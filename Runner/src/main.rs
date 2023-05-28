@@ -24,13 +24,13 @@ fn main() {
 
     let link = linker.instantiate(&mut store, &module).unwrap();
 
-    let hello_fn = link.get_typed_func::<(i64, i64), i64>(&mut store, "hello").unwrap();
+    let hello_fn = link.get_typed_func::<(), ()>(&mut store, "hello").unwrap();
 
     let interval = Duration::from_secs(1);
     let mut next_time = Instant::now() + interval;
 
     loop {
-        hello_fn.call(&mut store, (1, 2)).unwrap();
+        hello_fn.call(&mut store, ()).unwrap();
         sleep(next_time - Instant::now());
         next_time += interval;
     }
