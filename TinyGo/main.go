@@ -1,17 +1,11 @@
 package main
 
-func main() {
-	println("adding two numbers:", add(2, 3))
-}
-
-// This is a Wasm module import
-//
-//export add
-func add(x, y int) int
+func main() {}
 
 // This is a Wasm module export
 //
-//export multiply
-func multiply(x, y int) int {
-	return x * y
+//export hello
+func hello(a, b int64) int64 {
+	println("Hello, TinyGo!")
+	return a + b
 }

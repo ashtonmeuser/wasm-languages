@@ -1,23 +1,7 @@
-import Result from "result"
-import Process from "sys/process"
-import Random from "sys/random"
+import WasmI64 from "runtime/unsafe/wasmi64"
 
-record Vector {
-  mut x: Number,
-  mut y: Number,
+@unsafe
+export let hello = (a: WasmI64, b: WasmI64) => {
+  print("Hello, Grain!")
+  WasmI64.add(a, b)
 }
-
-let (+) = (a, b) => {
-  { x: a.x + b.x, y: a.y + b.y }
-}
-
-let a = { x: 1, y: 2 }
-let b = { x: 3, y: 4 }
-let c = a + b
-// print(c.x)
-
-print("Here is a longer string")
-
-print("And another string")
-
-Process.exit(1)

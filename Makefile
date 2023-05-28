@@ -4,10 +4,10 @@ tinygo:
 	tinygo build -o TinyGo/main.wasm -target wasi TinyGo/main.go
 
 grain:
-	cd Grain && grain compile --release --elide-type-info -o main.wasm main.gr
+	cd Grain && grain compile main.gr --release --use-start-section -o main.wasm
 
 as:
-	npm --prefix ./AssemblyScript/ run build
+	cd AssemblyScript && npm run build
 
 rust:
 	cd Rust && cargo build --target wasm32-wasi

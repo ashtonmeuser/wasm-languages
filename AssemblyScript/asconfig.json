@@ -3,8 +3,7 @@
   "targets": {
     "release": {
       "outFile": "build/main.wasm",
-      "optimize": "speed",
-      "noAssert": true
+      "optimize": "speed"
     }
   }
 }
