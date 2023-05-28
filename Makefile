@@ -20,8 +20,8 @@ zig:
 	cd Zig && zig build-exe -O ReleaseSmall -target wasm32-wasi src/main.zig
 	cp Zig/main.wasm Runner/zig.wasm
 
-inspect:
-	@find . -name "main.wasm" -exec echo {} \; -exec wasmer inspect {} \;
+emcc:
+	cd Emscripten && emcc main.cpp -O3 -o ../Runner/emcc.wasm
 
 runner:
 	cd Runner && cargo run "$(RUN)"
