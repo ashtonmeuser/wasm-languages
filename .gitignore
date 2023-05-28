@@ -1,12 +1,10 @@
 .DS_Store
 *.o
+*.wasm
 AssemblyScript/node_modules/
 AssemblyScript/build/
 Grain/target
-Rust/target/*
-!Rust/target/wasm32-wasi/
-Rust/target/wasm32-wasi/*
-!Rust/target/wasm32-wasi/debug
-Rust/target/wasm32-wasi/debug/*
-!Rust/target/wasm32-wasi/debug/main.wasm
+Rust/target
 Zig/zig-cache
+Runner/target
+!Runner/*.wasm

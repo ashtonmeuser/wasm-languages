@@ -1,19 +1,27 @@
-.PHONY: tinygo grain rust zig
+.PHONY: tinygo grain rust zig runner
+
+RUN?=as
 
 tinygo:
-	tinygo build -o TinyGo/main.wasm -target wasi TinyGo/main.go
+	cd TinyGo && tinygo build -o ../Runner/go.wasm -target wasi main.go
 
 grain:
-	cd Grain && grain compile main.gr --release --use-start-section -o main.wasm
+	cd Grain && grain compile main.gr --release --use-start-section -o ../Runner/grain.wasm
 
 as:
 	cd AssemblyScript && npm run build
+	cp AssemblyScript/build/main.wasm Runner/as.wasm
 
 rust:
 	cd Rust && cargo build --target wasm32-wasi
+	cp Rust/target/wasm32-wasi/debug/main.wasm Runner/rust.wasm
 
 zig:
 	cd Zig && zig build-exe -O ReleaseSmall -target wasm32-wasi src/main.zig
+	cp Zig/main.wasm Runner/zig.wasm
 
 inspect:
 	@find . -name "main.wasm" -exec echo {} \; -exec wasmer inspect {} \;
+
+runner:
+	cd Runner && cargo run "$(RUN)"
