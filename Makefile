@@ -3,7 +3,7 @@
 RUN?=as
 
 tinygo:
-	cd TinyGo && tinygo build -o ../Runner/go.wasm -target wasi main.go
+	cd TinyGo && tinygo build -o ../Runner/tinygo.wasm -target wasi main.go
 
 grain:
 	cd Grain && grain compile main.gr --release --use-start-section -o ../Runner/grain.wasm
