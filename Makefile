@@ -13,8 +13,8 @@ as:
 	cp AssemblyScript/build/main.wasm Runner/as.wasm
 
 rust:
-	cd Rust && cargo build --target wasm32-wasi
-	cp Rust/target/wasm32-wasi/debug/main.wasm Runner/rust.wasm
+	cd Rust && RUSTFLAGS="-C link-arg=-s" cargo build --release --target wasm32-wasi
+	cp Rust/target/wasm32-wasi/release/main.wasm Runner/rust.wasm
 
 zig:
 	cd Zig && zig build-exe -O ReleaseSmall -target wasm32-wasi src/main.zig
@@ -25,3 +25,6 @@ emcc:
 
 runner:
 	cd Runner && cargo run "$(RUN)"
+
+shrink:
+	wasm-opt --enable-bulk-memory -O -o Runner/$(RUN).wasm Runner/$(RUN).wasm
