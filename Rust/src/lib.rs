@@ -1,4 +1,4 @@
 #[no_mangle]
-pub fn hello() {
-  println!("Hello, Rust!");
+pub fn multi() -> (i64, i64) {
+  (1, 2)
 }

@@ -13,7 +13,7 @@ as:
 	cp AssemblyScript/build/main.wasm Runner/as.wasm
 
 rust:
-	cd Rust && RUSTFLAGS="-C link-arg=-s" cargo build --release --target wasm32-wasi
+	cd Rust && RUSTFLAGS="-C link-arg=-s -C target-feature=+multivalue" cargo build --release --target wasm32-wasi
 	cp Rust/target/wasm32-wasi/release/main.wasm Runner/rust.wasm
 
 zig:
