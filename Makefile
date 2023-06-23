@@ -9,12 +9,12 @@ grain:
 	cd Grain && grain compile main.gr --release --use-start-section -o ../Runner/grain.wasm
 
 as:
-	cd AssemblyScript && npm run build
-	cp AssemblyScript/build/main.wasm Runner/as.wasm
+	cd AssemblyScript && npm run build:all
+	cp AssemblyScript/build/*.wasm Runner/
 
 rust:
-	cd Rust && RUSTFLAGS="-C link-arg=-s" cargo build --release --target wasm32-wasi
-	cp Rust/target/wasm32-wasi/release/main.wasm Runner/rust.wasm
+	cd Rust && RUSTFLAGS="-C link-arg=-s -C target-feature=+multivalue" cargo build --release --target wasm32-wasi
+	cp Rust/target/wasm32-wasi/release/main.wasm Runner/special.wasm
 
 zig:
 	cd Zig && zig build-exe -O ReleaseSmall -target wasm32-wasi src/main.zig

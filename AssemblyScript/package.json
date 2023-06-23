@@ -16,6 +16,10 @@
     }
   },
   "scripts": {
-    "build": "asc assembly/index.ts --target release"
+    "build": "asc assembly/$npm_config_file.ts --target release --outFile build/$npm_config_file.wasm",
+    "build:all": "npm run build:simple && npm run build:import && npm run build:wasi",
+    "build:simple": "npm run build --file=simple",
+    "build:import": "npm run build --file=import",
+    "build:wasi": "npm run build --file=wasi"
   }
 }
