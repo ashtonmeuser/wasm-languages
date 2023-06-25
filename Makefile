@@ -6,7 +6,7 @@ tinygo:
 	cd TinyGo && tinygo build -o ../Runner/tinygo.wasm -target wasi main.go
 
 grain:
-	cd Grain && grain compile main.gr --release --use-start-section -o ../Runner/grain.wasm
+	cd Grain && grain compile main.gr --no-wasm-tail-call --release --use-start-section -o ../Runner/grain.wasm
 
 as:
 	cd AssemblyScript && npm run build

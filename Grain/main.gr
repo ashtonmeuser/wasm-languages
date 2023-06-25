@@ -1,1 +1,13 @@
-export let hello = () => print("Hello, Grain!")
+module Main
+include "sys/process"
+include "array"
+
+provide let args_get = () => {
+  match (Process.argv()) {
+    Ok(args) => {
+      Array.map((arg) => print(arg), args)
+      Array.length(args)
+    },
+    _ => 0
+  }
+}
