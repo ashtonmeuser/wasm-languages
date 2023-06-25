@@ -9,7 +9,6 @@ export function proc_exit(code: i64): void {
 }
 
 // wasi_snapshot_preview1.args_get
-// NOTE: Don't use; process.argv is broken in wasi-shim
 export function args_get(): i64 {
   for (let i = 0; i < process.argv.length; i++) console.log(process.argv[i]);
   return process.argv.length;
