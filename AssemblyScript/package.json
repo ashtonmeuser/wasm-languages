@@ -17,9 +17,10 @@
   },
   "scripts": {
     "build": "asc assembly/$npm_config_file.ts --target release --outFile build/$npm_config_file.wasm",
-    "build:all": "npm run build:simple && npm run build:import && npm run build:wasi",
-    "build:simple": "npm run build --file=simple",
+    "build:all": "npm run build:simple && npm run build:import && npm run build:memory && npm run build:wasi",
+    "build:simple": "npm run build --file=simple -- --noExportMemory",
     "build:import": "npm run build --file=import",
+    "build:memory": "npm run build --file=memory",
     "build:wasi": "npm run build --file=wasi"
   }
 }

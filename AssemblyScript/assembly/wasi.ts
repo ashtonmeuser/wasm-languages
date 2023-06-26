@@ -21,8 +21,10 @@ export function environ_get(): i64 {
 }
 
 // wasi_snapshot_preview1.random_get
-export function random_get(): f64 {
-  return Math.random();
+export function random_get(): i64 {
+  let buffer = new Uint8Array(1);
+  crypto.getRandomValues(buffer);
+  return buffer[0];
 }
 
 // wasi_snapshot_preview1.clock_time_get
